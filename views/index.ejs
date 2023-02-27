@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Compras</title>
+  <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Lista de Compras</h1>
+  </header>
+  <main class="row">
+    <section class="painel col s5">
+      <h2>Controles</h2>
+      <ul class="collapsible">
+        <!-- Adicionar -->
+        <li class="adicionar">
+          <div class="collapsible-header"><i class="material-icons">Adicionar</i></div>
+            <div class="collapsible-body">
+              <form method="POST">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input placeholder="Codigo" id="add-code" name="codigo" type="number" class="validate">
+                    <label for="add-code">Código</label>
+                </div>
+                  <div class="input-field col s6">
+                      <input placeholder="Produto" id="add-nome" name="produto" type="text" class="validate">
+                      <label for="add-nome">Nome do Produto</label>
+                  </div>
+                  <div class="input-field col s6">
+                      <input id="add-quant" type="number" name="quantidade" class="validate">
+                      <label for="add-quant">Quantidade</label>
+                  </div>
+                </div>
+                <div class="botao">
+                  <button class="waves-effect waves-light green lighten-1 btn">Adicionar</button>
+                </div>
+              </form>
+            </div>
+        </li>
+        <!-- ALTERAR -->
+        <li class="alterar">
+          <div class="collapsible-header"><i class="material-icons">Alterar</i></div>
+          <div class="collapsible-body">
+            <form>
+              <div class="row">
+                <div class="col s12">
+                Insira o Código do produto que deseja <strong>alterar</strong>:
+                  <div class="input-field inline">
+                  <input id="alterar-codigo" type="number" class="validate">
+                  <label for="alterar-codigo">Código</label> 
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="input-field col s6">
+                    <input placeholder="Placeholder" id="alterar-produto" type="text" class="validate">
+                    <label for="alterar-produto">Nome do Produto</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="alterar-quantidade" type="number" class="validate">
+                    <label for="alterar-quantidade">Quantidade</label>
+                  </div>
+              </div>
+              <div class="botao">
+                <button class="waves-effect waves-light yellow darken-1 btn">Alterar</button>
+              </div>
+            </form>
+          </div>
+        </li>
+      <!-- EXCLUIR -->
+        <li class="excluir">
+          <div class="collapsible-header"><i class="material-icons">Excluir</i></div>
+          <div class="collapsible-body">
+              <div class="row">
+                  <div class="col s12">
+                  Insira o código do produto que deseja <strong>excluir</strong>:
+                      <div class="input-field inline">
+                      <input id="excluir-produto" type="number" class="validate">
+                      <label for="excluir-produto">Código</label> 
+                      </div>
+                  </div>
+              </div>
+              <div class="botao">
+                  <button class="waves-effect waves-light red lighten-1 btn">Excluir</button>
+              </div>
+          </div>
+        </li>
+        <!-- Limpar -->
+        <li class="limpar">
+          <div class="collapsible-header"><i class="material-icons">Apagar tudo</i></div>
+          <div class="collapsible-body">
+              <div class="botao">
+                  <a class="waves-effect waves-light red darken-4 btn">Limpar Tabela</a>
+              </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="table col s7">
+      <div class="content">
+          <table class="highlight centered">
+              <thead>
+                  <th>código</th>
+                  <th>produto</th>
+                  <th>quantidade</th>
+              </thead>
+              <tbody>
+               
+              <!-- <% produtos.forEach( (produto) => { %>
+                <tr>
+                  <td><%= produto.codigo %></td>
+                  <td><%= produto.produto %></td>
+                  <td><%= produto.quantidade %></td>
+                </tr>
+              <% }) %> -->
+                  <!-- aqui entra o javascript -->
+              </tbody>
+          </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/colaps.js"></script>
+  <script src="js/script.js" type="module"></script>
+  
+</body>
+</html>
